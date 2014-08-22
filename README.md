@@ -1,15 +1,4 @@
-
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Welcome to your Node.js project on Cloud9 IDE!
-
-This chat example showcases how to use `socket.io` with a static `express` server.
+A sample application using a Node server and Angular front end, with unit tests.
 
 ## Running the server
 
@@ -19,4 +8,4 @@ This chat example showcases how to use `socket.io` with a static `express` serve
 
     $ node server.js
 
-Once the server is running, open the project in the shape of 'https://projectname-c9-username.c9.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
+Once the server is running, open the site at 'https://angularnodesample-c9-devandylee.c9.io/'.

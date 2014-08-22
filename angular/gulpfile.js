@@ -44,6 +44,11 @@ gulp.task('js', ['package-partials'], function () {
         .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('removeTmp', ['js'], function() {
+    return gulp.src('./tmp', { read: false })
+        .pipe(clean());
+});
+
 // Concatenates CSS files, rewrites relative paths to Bootstrap fonts, copies Bootstrap fonts
 gulp.task('css', function () {
     var bowerCss = gulp.src('app/bower_components/bootstrap/dist/css/bootstrap.min.css')
@@ -87,7 +92,7 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-gulp.task('default', ['html', 'partials', 'js', 'css'], function (callback) {
+gulp.task('default', ['html', 'partials', 'js', 'css', 'removeTmp'], function (callback) {
     callback();
     console.log('\nPlaced optimized files in ' + chalk.magenta('dist/\n'));
 });

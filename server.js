@@ -19,7 +19,10 @@ var routes = require('./back_end/routes');
 var router = express();
 var server = http.createServer(router);
 
+// Host the ajax api
 router.use("/api", routes.router);
+
+// Host the client site (change to 'angular/dist' for optimised version)
 router.use(express.static(path.resolve(__dirname, 'angular/app')));
 
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0");

@@ -1,8 +1,8 @@
-﻿var Db = require('mongodb').Db,
+var Db = require('mongodb').Db,
     Server = require('mongodb').Server;
 
 var getDB = function getDB(callbackFn) {
-    var db = new Db('spa', new Server('localhost', 27017), { w: 0 });
+    var db = new Db('spa', new Server(process.env.IP, 27017), { w: 0 });
     db.open(function (err, db) {
         if (err) throw err;
 
@@ -40,8 +40,8 @@ getDB(function (db) {
     investmentsTable.count(function (err, count) {
         if (err) throw err;
         console.log(count + " records in table");
-        if (!count) {
-            for (var n = 0; n < investments.length; n++) {
+        if (count < investments.length) {
+            for (var n = count; n < investments.length; n++) {
                 console.log("Inserting record '" + investments[n].name + "'");
                 investmentsTable.insert(investments[n]);
             }
